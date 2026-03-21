@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bvp0oy6d34s7n"]
+
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_8id3q"]
+[ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://tree.tscn" id="2_kbdm8"]
+[ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_kbdm8"]
+
+[node name="Game" type="Node2D" unique_id=1145754407]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1900473204]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=649436418]
+offset_right = 1926.0
+offset_bottom = 1082.0
+
+[node name="Player" parent="." unique_id=2111409188 instance=ExtResource("1_8id3q")]
+position = Vector2(508, 428)
+
+[node name="StaticBody2D" parent="." unique_id=630045576 instance=ExtResource("2_kbdm8")]
+position = Vector2(294, 784)
+
+[node name="StaticBody2D2" parent="." unique_id=1540757199 instance=ExtResource("2_kbdm8")]
+position = Vector2(1533, 252)
+
+[node name="StaticBody2D3" parent="." unique_id=772610277 instance=ExtResource("2_kbdm8")]
+position = Vector2(1347, 704)
+
+[node name="StaticBody2D4" parent="." unique_id=2061448360 instance=ExtResource("2_kbdm8")]
+position = Vector2(504, 427)
+
+[node name="StaticBody2D5" parent="." unique_id=1269153296 instance=ExtResource("2_kbdm8")]
+position = Vector2(204, 183)
+
+[node name="StaticBody2D6" parent="." unique_id=959849186 instance=ExtResource("2_kbdm8")]
+position = Vector2(926, 169)
+
+[node name="StaticBody2D7" parent="." unique_id=2014892391 instance=ExtResource("2_kbdm8")]
+position = Vector2(939, 865)
+
+[node name="Mob" parent="." unique_id=1706312174 instance=ExtResource("3_kbdm8")]
