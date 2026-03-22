@@ -18,6 +18,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	queue_free()
 	if body.has_method("take_damage"):
+		var impact = preload("uid://kcl4efkvrany").instantiate()
+		get_parent().add_child(impact)
+		impact.global_position = global_position
+		impact.global_rotation = global_rotation
 		body.take_damage()
+	queue_free()

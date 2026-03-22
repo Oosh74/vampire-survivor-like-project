@@ -14,7 +14,8 @@ func shoot():
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_bullet)
-
+	var flash = preload("uid://c1b2kbuq1if08").instantiate()
+	%ShootingPoint.add_child(flash)
 
 func _on_timer_timeout() -> void:
 	shoot()

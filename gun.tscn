@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpyfw0mh6bsnv" path="res://gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://coon1w77o334i" path="res://pistol/pistol.png" id="1_vk1bi"]
+[ext_resource type="PackedScene" uid="uid://c1b2kbuq1if08" path="res://pistol/muzzle_flash/muzzle_flash.tscn" id="3_kw0bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 300.02667
@@ -26,6 +27,10 @@ texture = ExtResource("1_vk1bi")
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=2064981348]
 unique_name_in_owner = true
 position = Vector2(27, -10)
+
+[node name="MuzzleFlash" parent="WeaponPivot/Pistol/ShootingPoint" unique_id=1628795163 instance=ExtResource("3_kw0bs")]
+position = Vector2(4.2077293, -0.103922166)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Timer" type="Timer" parent="." unique_id=1340201748]
 wait_time = 0.3
