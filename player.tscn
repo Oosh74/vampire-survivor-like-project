@@ -2,19 +2,59 @@
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="2_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 45.01111
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 48.010414
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqtel"]
+bg_color = Color(0.3882353, 0.8, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Player" type="CharacterBody2D" unique_id=2111409188]
 script = ExtResource("1_onrkg")
+
+[node name="Gun" parent="." unique_id=1303509688 instance=ExtResource("2_i3pqv")]
 
 [node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_4flbx")]
 unique_name_in_owner = true
 position = Vector2(0, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953256989]
-position = Vector2(-3, -43)
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=953256989]
+position = Vector2(0, -45)
 shape = SubResource("CircleShape2D_onrkg")
+debug_color = Color(0.6557268, 0.51731616, 0, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1531409404]
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1410839018]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="HurtCollision" type="CollisionShape2D" parent="HurtBox" unique_id=616648139]
+position = Vector2(0, -45)
+shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=824273887]
+offset_left = -62.0
+offset_top = -136.0
+offset_right = 63.0
+offset_bottom = -109.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i3pqv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hqtel")
+value = 100.0
+show_percentage = false

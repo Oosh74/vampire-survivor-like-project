@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://vlnnaopyegf"]
+
+[ext_resource type="Texture2D" uid="uid://bd4rrqj72amnx" path="res://pistol/projectile.png" id="1_lj8kt"]
+[ext_resource type="Script" uid="uid://ck8g8lpma32l8" path="res://pew_pew.gd" id="1_vpjhq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpjhq"]
+radius = 16.0
+height = 50.0
+
+[node name="PewPew" type="Area2D" unique_id=194261483]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_vpjhq")
+
+[node name="Projectile" type="Sprite2D" parent="." unique_id=1183829086]
+texture = ExtResource("1_lj8kt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=787426901]
+position = Vector2(1, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vpjhq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
