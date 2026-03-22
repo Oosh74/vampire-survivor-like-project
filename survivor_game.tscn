@@ -19,12 +19,14 @@ layer = -30
 
 [node name="Kills" type="Label" parent="CanvasLayer" unique_id=1703170431]
 unique_name_in_owner = true
-z_index = 1
+top_level = true
+z_index = 130
+z_as_relative = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+offset_left = -49.5
+offset_right = 49.5
 offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

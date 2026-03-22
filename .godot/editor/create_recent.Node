@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 Label3D
 Label
 Button
@@ -12,4 +13,3 @@ Area2D
 Marker2D
 Camera2D
 CharacterBody2D
-StaticBody2D

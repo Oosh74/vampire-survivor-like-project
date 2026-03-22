@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var laser: AudioStreamPlayer2D = $laser
+
 func _physics_process(delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies() #gets character body 2d nodes overlaping in area
 	#returns as an array
@@ -9,6 +11,7 @@ func _physics_process(delta: float) -> void:
 		look_at(target_enemy.global_position) #function available in most 2D nodes
 
 func shoot():
+	laser.play()
 	const PEW_PEW = preload("uid://vlnnaopyegf")
 	var new_bullet = PEW_PEW.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position

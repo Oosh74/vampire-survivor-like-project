@@ -3,9 +3,18 @@
 [ext_resource type="Script" uid="uid://bpyfw0mh6bsnv" path="res://gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://coon1w77o334i" path="res://pistol/pistol.png" id="1_vk1bi"]
 [ext_resource type="PackedScene" uid="uid://c1b2kbuq1if08" path="res://pistol/muzzle_flash/muzzle_flash.tscn" id="3_kw0bs"]
+[ext_resource type="AudioStream" uid="uid://bcn8n0rr7peue" path="res://sounds/laser5.ogg" id="4_8iju2"]
+[ext_resource type="AudioStream" uid="uid://clab447bqlks2" path="res://sounds/laser4.ogg" id="4_pr6yj"]
+[ext_resource type="AudioStream" uid="uid://b2wh6jk3ou6gn" path="res://sounds/laser6.ogg" id="5_k8v55"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 300.02667
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8iju2"]
+streams_count = 3
+stream_0/stream = ExtResource("4_pr6yj")
+stream_1/stream = ExtResource("5_k8v55")
+stream_2/stream = ExtResource("4_8iju2")
 
 [node name="Gun" type="Area2D" unique_id=1303509688]
 collision_layer = 0
@@ -35,5 +44,8 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Timer" type="Timer" parent="." unique_id=1340201748]
 wait_time = 0.3
 autostart = true
+
+[node name="laser" type="AudioStreamPlayer2D" parent="." unique_id=2109366051]
+stream = SubResource("AudioStreamRandomizer_8iju2")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
