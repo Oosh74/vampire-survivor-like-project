@@ -3,6 +3,7 @@ extends Node2D
 var score = 0
 @onready var kills: Label = %Kills
 
+
 func spawn_mob():
 	var mob = preload("uid://y38gte5o0xf8").instantiate()
 	%PathFollow2D .progress_ratio = randf()

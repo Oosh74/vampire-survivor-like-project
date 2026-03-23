@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_dy6sc"]
 [ext_resource type="Script" uid="uid://d07l5xwryn2cx" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="AudioStream" uid="uid://b2ssx05j4wg2n" path="res://sounds/UIGlitch_MedDmg_HA_HealthDmg_01.wav" id="3_ubaqv"]
+[ext_resource type="AudioStream" uid="uid://dys8y1p6b4thg" path="res://sounds/freesound_community-poof-of-smoke-87381.mp3" id="4_p11y5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
 radius = 2.7115493
@@ -20,3 +22,10 @@ shape = SubResource("CircleShape2D_nokgg")
 [node name="Slime" parent="." unique_id=2008890567 instance=ExtResource("1_dy6sc")]
 unique_name_in_owner = true
 position = Vector2(0, -1)
+
+[node name="MobDamage" type="AudioStreamPlayer2D" parent="." unique_id=1359887762]
+stream = ExtResource("3_ubaqv")
+bus = &"SFX"
+
+[node name="MobDied" type="AudioStreamPlayer2D" parent="." unique_id=1550441794]
+stream = ExtResource("4_p11y5")

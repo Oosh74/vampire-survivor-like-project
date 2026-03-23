@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://oj7hj4kgw31t" path="res://survivor_game.gd" id="1_5mrb7"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_8id3q"]
 [ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://tree.tscn" id="2_kbdm8"]
+[ext_resource type="AudioStream" uid="uid://bqtq0m8pyu5um" path="res://sounds/yeahhhhh yuh.wav" id="4_5mrb7"]
 
 [sub_resource type="Curve2D" id="Curve2D_kbdm8"]
 _data = {
@@ -40,33 +41,40 @@ offset_bottom = 1082.0
 [node name="Player" parent="." unique_id=2111409188 instance=ExtResource("1_8id3q")]
 position = Vector2(508, 428)
 
-[node name="Path2D" type="Path2D" parent="." unique_id=274893488]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1599198897]
+position = Vector2(-508, -428)
+stream = ExtResource("4_5mrb7")
+autoplay = true
+bus = &"Music"
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=274893488]
+position = Vector2(-508, -428)
 curve = SubResource("Curve2D_kbdm8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1958619493]
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1958619493]
 unique_name_in_owner = true
 position = Vector2(-122, -103)
 rotation = 0.0009254972
 
-[node name="StaticBody2D" parent="." unique_id=630045576 instance=ExtResource("2_kbdm8")]
+[node name="Tree" parent="." unique_id=630045576 instance=ExtResource("2_kbdm8")]
 position = Vector2(294, 784)
 
-[node name="StaticBody2D2" parent="." unique_id=1540757199 instance=ExtResource("2_kbdm8")]
+[node name="Tree2" parent="." unique_id=1540757199 instance=ExtResource("2_kbdm8")]
 position = Vector2(1533, 252)
 
-[node name="StaticBody2D3" parent="." unique_id=772610277 instance=ExtResource("2_kbdm8")]
+[node name="Tree3" parent="." unique_id=772610277 instance=ExtResource("2_kbdm8")]
 position = Vector2(1347, 704)
 
-[node name="StaticBody2D4" parent="." unique_id=2061448360 instance=ExtResource("2_kbdm8")]
+[node name="Tree4" parent="." unique_id=2061448360 instance=ExtResource("2_kbdm8")]
 position = Vector2(504, 427)
 
-[node name="StaticBody2D5" parent="." unique_id=1269153296 instance=ExtResource("2_kbdm8")]
+[node name="Tree5" parent="." unique_id=1269153296 instance=ExtResource("2_kbdm8")]
 position = Vector2(204, 183)
 
-[node name="StaticBody2D6" parent="." unique_id=959849186 instance=ExtResource("2_kbdm8")]
+[node name="Tree6" parent="." unique_id=959849186 instance=ExtResource("2_kbdm8")]
 position = Vector2(926, 169)
 
-[node name="StaticBody2D7" parent="." unique_id=2014892391 instance=ExtResource("2_kbdm8")]
+[node name="Tree7" parent="." unique_id=2014892391 instance=ExtResource("2_kbdm8")]
 position = Vector2(939, 865)
 
 [node name="Timer" type="Timer" parent="." unique_id=2113747686]

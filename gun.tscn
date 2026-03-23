@@ -47,5 +47,7 @@ autostart = true
 
 [node name="laser" type="AudioStreamPlayer2D" parent="." unique_id=2109366051]
 stream = SubResource("AudioStreamRandomizer_8iju2")
+volume_db = -13.565
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

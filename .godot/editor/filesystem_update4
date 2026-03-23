@@ -9,3 +9,4 @@ res://mob.gd
 res://player.gd
 res://survivor_game.tscn
 res://survivor_game.gd
+res://default_bus_layout.tres
